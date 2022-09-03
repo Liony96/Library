@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="Assets/Icons/library-icon.png">
+  <title>Library</title>
+</head>
+<body>
+  <div class="form-container" id="form-container">
+    <form id="form">
+      <div class="form-group">
+        <input required maxlength="20" minlength="3" type="text" placeholder="Enter book's name" id="book-name">
+        <input required maxlength="20" minlength="3" type="text" placeholder="Enter author's name" id="author">
+        <input required type="number" maxlength="4" placeholder="How many pages does the book have?" id="pages">
+        <input required type="number" maxlength="4" placeholder="How many pages have you read?" id="pages-read">
+      </div>
+    </form> 
+    <button id="add" class="enabled">Add Book</button>
+    <button id="cancel">Cancel</button>
+  </div>
+  <div class="library-container">
+    <div class="nav-bar-container">
+      <nav class="nav-bar">
+        <div class="icon-header">
+          <img class="icon" src="Assets/Icons/library-icon.png">
+          <h1>Library</h1>
+        </div>
+        <div class="links">
+          <a href="#" class="link">
+            <img src="Assets/Icons/github-icon.png">
+          </a>
+          <a href="#" class="link">
+            <img src="Assets/Icons/linkedin_icon.png">
+          </a>
+          <a href="#" class="link">
+            <img src="Assets/Icons/twitter-icon.png">
+          </a>
+          <a href="#" class="link">
+            <img src="Assets/Icons/facebook-icon.png">
+          </a>
+        </div>
+      </nav>
+    </div>
+    <div class="aside-container">
+        <div class="info-container">
+          <div class="info">Books: 
+            <span id="book-number">0</span>
+          </div>
+          <div class="info">Pages:   
+            <span id="pages-number">0</span>
+          </div>
+          <div class="info">Pages read:   
+            <span id="pages-numbe-read">0</span>
+          </div>
+        </div>
+    </div>
+    <div class="books-container" id = "books-container">
+      <button class="new-book" id="new-book">+</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

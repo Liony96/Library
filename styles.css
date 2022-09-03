@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+:root {
+  --selected-color: #1d4ed8;
+  --default-color: #6b21a8;
+  --hover-color: rgb(80, 140, 250);
+  --color: var(--default-color);
+  --card-color: #ddd6fe;
+  --invalid-color: #f87171;
+  --invalid-hover: #ef4444;
+  --valid-color: #c084fc;
+  --valid-hover: #a855f7;
+  --disabled-color: #737373;
+  --focus-color: #facc15;
+  --font-color: #404040;
+  --font-hover: #9ca3af;
+}
+
+body {
+  height: 100vh;
+}
+
+/*Styling the form*/
+.form-container{
+  width: 100%;
+  height: 100%;
+  background-color: var(--font-color);
+  position: absolute;
+  opacity: 0.8;
+  transition: all 1s ease-in-out;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+  z-index: 4;
+}
+
+.form-group {
+padding: 3px;
+width: 25vw;
+height: 70vh;
+background-color: black;
+border: 5px solid var(--color);
+border-radius: 10px;
+opacity: 1;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(4, 2fr);
+column-gap: 5px;
+}
+
+.form-group input {
+  padding: 1rem;
+  border: none;
+  background-color: black;
+  color: white;
+  outline-style: none;
+}
+
+input::-webkit-input-placeholder {
+  color: white;
+}
+
+input[type="number"],
+input[type="text"] {
+  border-radius: 3px solid gray;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.form-container button {
+  border-radius: 10px;
+  font-size: 200%;
+  color: white;
+  border: 3px solid gray;
+}
+
+#add {
+  width: 25%;
+  height: 6.5%;
+  background-color: var(--valid-color);
+}
+
+#add.enabled:hover {
+  background-color: var(--valid-hover);
+}
+
+#add.disabled {
+  background-color: var(--disabled-color);
+}
+
+#cancel {
+  width: 25%;
+  height: 6.5%;
+  background-color: var(--invalid-color);
+
+}
+
+#cancel:hover {
+  background-color: var(--invalid-hover);
+}
+
+input {
+  grid-column: span 2;
+  font-size: 2em;
+}
+
+/*Styling the library*/
+.library-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 5fr;
+}
+
+/*Styling the nav bar*/
+.nav-bar-container {
+  background-color: var(--default-color);
+  grid-column: span 2;
+}
+
+.nav-bar {
+  height: 100%;
+  padding: 1em 2em;
+  padding-right: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-header {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  font-size: calc(2em + 2vw + 2vh);
+  color: #9ca3af;
+}
+
+.icon {
+  transition: all 0.4s ease-in-out;
+  width: calc(1em + 2vw + 2vh);
+}
+
+.icon:hover {
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transform:rotate(720deg);
+}
+
+.links {
+  display: flex;
+  gap: .7em;
+  align-self: flex-end;
+}
+
+.links img {
+  width: 3em;
+  opacity: 0.6;
+}
+
+.links img:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  transition: all 0.2s ease-in;
+}
+
+
+.aside-container {
+  background-color: var(--default-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-container {
+  background-color: var(--valid-color);
+  width: 80%;
+  height: 50%;
+  border-radius: 10px;
+  box-shadow: none;
+  transition: all .2s ease-in;
+  display: grid;
+  color: #fff;
+}
+
+.info-container:hover {
+  transition: all .3s ease-in;
+  transform: translate(5px, -3px);
+  box-shadow: -5px 3px 5px gray;
+  border-radius: 10px;
+}
+
+.info {
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2em;
+  transition: all .2s ease-in;
+}
+
+.info:hover {
+  background-color: var(--valid-hover);
+  border-radius: 10px;
+  color: var(--font-hover);
+  transition: all .1s ease-in;
+  transform: translate(5px, -3px);
+  box-shadow: -5px 3px 5px gray;
+  border-radius: 10px;
+}
+
+/*Styling the library*/
+
+.books-container {
+  padding: 2em;
+  width: 100%;
+  display: grid;
+  background-color: rgb(177, 176, 176);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  column-gap: 1em;
+  row-gap: 2em;
+  overflow: auto;
+}
+
+.new-book {
+  position: absolute;
+  bottom: 6vh;
+  right: 4vw;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(14, 14, 44, 0.501);
+  transform: rotate(-90deg);
+  transition: all ease 0.6s;
+  color: var(--font-color);
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.new-book:hover {
+  transition-property: transform, background-color, color;
+  transition-duration: 0.3s, 0.4s, 0.3s;
+  transition-timing-function: ease-in, linear, linear;
+  transform: scale(1.4);
+  background-color: rgb(14, 14, 44);
+  color: var(--font-hover);
+}
+
+.minibook {
+  background-color: var(--default-color);
+  width: 250px;
+  height: 300px;
+  padding: 0.5em;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5%;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  border-left: 15px solid  var(--valid-color);
+}
+
+.minibook:hover {
+  transition: all .3s ease-in;
+  transform: translate(5px, -3px);
+  box-shadow: -5px 3px 5px gray;
+  border-radius: 10px;
+}
